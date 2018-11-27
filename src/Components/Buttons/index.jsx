@@ -9,8 +9,8 @@ class Buttons extends Component {
 
   render() {
     return (
-      <div>
-        How are you?
+      <div className="Buttons">
+        {this.props.children}
       </div>
     );
   }

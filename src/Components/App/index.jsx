@@ -3,11 +3,34 @@ import './styles.css';
 import Display from '../Display/index.jsx';
 import Buttons from '../Buttons/index.jsx';
 import Button from '../Button/index.jsx';
+import update from 'immutability-helper';
 
 class App extends Component {
   constructor() {
     super()
     this.state = { operations: [] }
+  }
+
+  handleClick = e => {
+    const value = e.target.getAttribute('data-value')
+
+    switch (value) {
+      case 'clear':
+        this.setState({
+          operations: [],
+        })
+        break
+      case 'equal':
+        this.calculateOperations()
+        break
+      default:
+        const newOperations = update(this.state.operations, {
+          $push: [value],
+        })
+        this.setState({
+          operations: newOperations,
+        })
+    }
   }
 
   render() {

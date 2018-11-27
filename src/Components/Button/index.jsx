@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 import './styles.css';
 
-const Button = (props) => {
-  return (
-    <div className="button">I'm fairly happy myself</div>
-  );
-};
+class Button extends Component {
+  render() {
+    return (
+      <div
+        onClick={this.props.onClick}
+        className="Button"
+        data-size={this.props.size}
+        data-value={this.props.value}
+      >
+        {this.props.label}
+      </div>
+    )
+  }
+}
 
 export default Button;

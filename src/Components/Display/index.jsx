@@ -8,9 +8,10 @@ class Display extends Component {
   // }
 
   render() {
+    const string = this.props.data.join('');
     return (
       <div>
-        Hi there
+       {string}
       </div>
     );
   }
