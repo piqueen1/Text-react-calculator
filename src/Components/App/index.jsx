@@ -4,6 +4,7 @@ import Display from '../Display/index.jsx';
 import Buttons from '../Buttons/index.jsx';
 import Button from '../Button/index.jsx';
 import update from 'immutability-helper';
+import math from 'mathjs';
 
 class App extends Component {
   constructor() {
@@ -21,7 +22,7 @@ class App extends Component {
         })
         break
       case 'equal':
-        this.calculateOperations()
+        this.math.eval()
         break
       default:
         const newOperations = update(this.state.operations, {
